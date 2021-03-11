@@ -1,0 +1,463 @@
+
+body {
+    color: white;
+    margin: 0;
+    font-family: 'weissenhof_groteskregular';
+    background-color: #4A9EF0;
+}
+
+/* Weissenhofgrostesk fonts */
+
+@font-face {
+    font-family: 'weissenhof_groteskmedium';
+    src: url('weissenhofgrotesk-medium-webfont.woff2') format('woff2'),
+         url('weissenhofgrotesk-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'weissenhof_groteskregular';
+    src: url('weissenhofgrotesk-regular-webfont.woff2') format('woff2'),
+         url('weissenhofgrotesk-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'weissenhof_groteskitalic';
+    src: url('weissenhofgrotesk-italic-webfont.woff2') format('woff2'),
+         url('weissenhofgrotesk-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+/* this is my nav CSS */
+  
+  .toggle,
+  [id^=drop] {
+    display: none;
+  }
+  
+  nav {
+    grid-column: 1 / 7;
+    grid-row: 1 / 2;
+    padding-top: 40px;
+  }
+  
+  #main-toggle {
+    cursor: pointer;
+    float: right;
+    padding: 10px 10px;
+    position: relative;
+    user-select: none;
+  }
+    /* this is my hamburger icon */
+  .nav-icon {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 20px;
+  }
+  
+  .nav-icon:before,
+  .nav-icon:after {
+    background:white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .nav-icon:before {
+    top: 6px;
+  }
+  
+  .nav-icon:after {
+    top: -6px;
+  }
+  
+  nav:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+   /* end of hamburger icon */
+  nav ul {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  nav ul li {
+    margin: 0px;
+    float: left;
+  }
+  
+  nav a {
+    display: block;
+    padding: 0 20px;
+    color: #FFF;
+    font-size: 18px;
+    line-height: 26px;
+    text-decoration: none;
+  }
+
+  nav ul li a {
+    color:  white;
+  }
+
+  nav ul li a:hover{
+    background-color:  rgba(54, 119, 188, 1);
+  }
+
+  nav ul li ul li a{
+    background-color: rgba(54, 119, 188, 0.5);
+  }
+
+  nav ul li ul li a:hover{
+    background-color: rgba(54, 119, 188, 1);
+  }
+  
+  
+  nav ul ul {
+    display: none;
+    position: absolute;
+    top: 26px;
+  }
+  
+  nav ul li:hover>ul {
+    display: inherit;
+  }
+  
+  nav ul ul li {
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+  }
+    
+  /* Media Queries for Nav
+  --------------------------------------------- */
+  
+  @media all and (max-width : 768px) {
+  
+    nav {
+      margin: 0;
+    }
+    nav ul{
+      float:none;
+    }
+
+    nav a {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .toggle+a,
+    .menu {
+      display: none;
+    }
+  
+    .toggle {
+      display: block;
+      padding: 0 20px;
+      color: white;
+      font-size: 14px;
+      line-height: 22px;
+      text-decoration: none;
+      border: none;
+    }
+  
+    .toggle:hover {
+      background-color:rgba(54, 119, 188, 1);
+    }
+  
+    [id^=drop]:checked+ul {
+      display: block;
+    }
+  
+    nav ul li {
+      display: block;
+      width: 100%;
+    }
+  
+    nav ul ul .toggle,
+    nav ul ul a {
+      padding: 0 40px;
+    }
+
+    nav ul ul {
+      float: none;
+      position: static;
+      color: #ffffff;
+    }
+  
+    nav ul ul li:hover>ul,
+    nav ul li:hover>ul {
+      display: none;
+    }
+  
+    nav ul ul li {
+      display: block;
+      width: 100%;
+    }
+  }
+
+/* this is my main body CSS */
+
+#page-container{
+  position:relative;
+  min-height:100vh;
+}
+
+#content{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 140px;
+    max-width: 1088px;
+    background-color:#4A9EF0;
+    display:grid;
+    margin:0 auto;
+    justify-content:center;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 16px;
+}
+
+p:hover, a:visited, a:link, a:active
+{
+  text-decoration: none!important;
+}
+
+.header {
+    grid-column: 1 / 13;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.logo {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    max-width: 168px;
+    margin-top: 22px;
+    margin-bottom:22px;
+}
+
+img {
+    display: block;
+    object-fit: scale-down;
+    max-width: 100%;
+    flex: 1;
+    min-height: 0;
+    align-self: center;
+    margin: auto;
+  }
+
+.tagline {
+    grid-column: 1 / 13;
+    grid-row: 2 / 3;
+    padding-top: 50px;
+    padding-bottom: 33px;
+}
+
+.hero {
+    grid-column: 1 / 13;
+    grid-row: 3 / 4;
+    z-index: 10;
+    padding-bottom: 10px;
+}
+
+.hero-2 {
+  grid-column: 1 / 13;
+  grid-row: 3 / 4;
+  z-index: 20;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.hero-3{
+  grid-column: 1 / 13;
+  grid-row: 3 / 4;
+  z-index: 30;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.box-1 {
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;   
+}
+
+.box-2 {
+    grid-column: 4 / 7;
+    grid-row: 4 / 5;
+}
+
+.box-3 {
+    grid-column: 7 / 10;
+    grid-row: 4 / 5;
+}
+
+.box-4 {
+    grid-column: 10 / 13;
+    grid-row: 4 / 5;
+}
+
+.box {
+opacity:0.5;
+}
+
+.box img{
+  width: 75%;
+}
+
+.box a{
+  width:50%;
+}
+
+.box:hover {
+  cursor: pointer;
+  opacity: 0.9; 
+ }
+
+.box p{
+  text-align: center;
+  color:white;
+  margin-top: -5px;
+  font-size: 18px; 
+  text-decoration: none; 
+}
+
+.box p:hover{
+  opacity: 0.9;
+}
+
+.footer { 
+margin-left: 100px;
+margin-right: 100px;
+  background-color:rgba(54, 119, 188, 0.9);
+  display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin:auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.social{
+  grid-column: 1 / 2;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 200%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.social a{
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.social a+a {
+  margin-left: 5px;
+}
+
+.social i:hover{
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.legal{
+  grid-column: 2 / 3;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 21px;
+  padding-top: 16px;
+}
+
+.white-button{
+  grid-column: 3 / 4;
+  text-align: center;
+  margin-top: 35px;
+}
+
+.white-button a{
+  text-decoration: none;
+  font-size:14px;
+  color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  padding: 4px 9px;
+}
+
+.white-button a:hover{
+  color:white;
+  background-color: rgba(255, 255, 255, 0.2);
+  }
+   /* this is my hero animation */
+
+@keyframes fade{
+  0% {opacity:0;}
+  11.11% {opacity:1;}
+  33.33% {opacity:1;}
+  44.44% {opacity:0;}
+  100% {opacity:0;}
+}
+
+.slider{
+  opacity:0;
+  animation-name: fade; animation-duration:12s;
+  animation-iteration-count: infinite;
+}
+
+.hero{
+  animation-delay: 0s;
+}
+
+.hero-2{
+  animation-delay: 4s;
+}
+
+.hero-3{
+  animation-delay: 8s;
+}
+    /* this is my 768px media query*/
+
+  @media all and (max-width : 768px) {
+
+    #content{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .legal{
+      font-size: .5em;
+      line-height: 1.5em;
+      margin-top: 5px;
+    }
+
+    .logo {
+      margin-top: 15px;
+      max-width: 100px;
+    }
+
+    .box p {
+      margin-top: 1px;
+      font-size: .5em; 
+    }
+
+    .white-button a{
+      font-size:.5em;
+      padding: 2px 5px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .social{
+      font-size: 150%;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+
+  }
